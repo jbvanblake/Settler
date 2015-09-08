@@ -1,0 +1,27 @@
+<div class='playerView fl <%= name %>'>
+    <div class='playerOutputs fl'>
+        <div class='setupContainer'>
+            <div class="nameSelectContainer">
+                <label>Select Your Name:</label>
+                <input class='nameSelect'>
+                <button class='nameSelectOk'>OK</button>
+            </div>
+            <div class ='startingResourcesContainer'>
+                <label>Pick Your Starting Resources:</label><br>
+                <%= resourceSelectTemplate%>
+                <%= resourceSelectTemplate%>
+                <%= resourceSelectTemplate%>
+                <button class = 'resourceSetupOk'>OK</button>
+            </div>
+        </div>
+
+        <div class='playerName' style='display:none;'>
+            <label class='turquoise'><%= name %></label>
+
+        </div>
+
+        <div class='hexCatalog'></div>
+    </div>
+    <div class='hexInputSlot fl'></div>
+
+</div>

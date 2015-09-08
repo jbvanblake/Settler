@@ -1,0 +1,37 @@
+<div class='hexInputContainer'> 
+    <label class='orange'>Add Resource Point</label>
+    <div class="resourceInsertionContainer">
+        <div >
+            <label class='darkBlue'>Primary</label>
+            <select class ='hexInputResource1'>
+                <% _.each(resourceTypes, function(i) {%> <option class='<%=i%>' value='<%=i%>'><%=i%></option> <%}); %>
+                <option class='NONE' value='NONE'>NONE</option>
+            </select>
+            </div>
+        <div>
+            <label class='darkBlue'>Secondary?</label>
+            <select class ='hexInputResource2'>
+
+                <% _.each(resourceTypes, function(i) {%> <option class='<%=i%>' value='<%=i%>'><%=i%></option>" <%}); %>
+                <option class='NONE' value='NONE'>NONE</option>
+            </select>
+
+            </div>
+        <select class ='hexInputRoll'>
+            <% _.each(hexNumbers, function(i) {%> <option value='<%=i%>'><%=i%></option>" <%}); %>
+
+        </select>
+        <select class ='hexInputId'>
+            <% _.each(hexIds, function(i) {%> <option value='<%=i%>'><%=i%></option>" <%}); %>
+        </select>
+        <p class="orange">--OR--</p>
+        <div class="allHexContainer">
+
+            <label class='darkBlue fl'>ex:Lu,Lu,2,A/Lu,2,A</label>
+            <input class = 'allHexInput'>
+            <div class="errorContainer"></div>
+        </div>
+    </div>
+
+    <button class='hexInputSubmit'>Submit</button>
+</div>
