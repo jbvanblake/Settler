@@ -5,7 +5,7 @@ define(["backbone"],function (Backbone) {
         },
         render:function(){
             var template = "<div id='robberContainer'>" +
-                "<input class='robberInput' type='text' placeholder='Current: "+this.hexId+"'><input type='button' id='robberSubmit' value='Move Robber'></button>";
+                "<input class='robberInput' type='text' placeholder='Current: "+this.hexId+"'><input type='button' id='robberSubmit' value='Move'></button>";
 
             this.$el.html($(template));
         },

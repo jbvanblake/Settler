@@ -28,7 +28,7 @@
                     "<button id = 'numPlayersOk'>OK</button>" +
                     "</div>" +
                     "<div id = 'PlayerBox'></div>"+
-                    "<div id = 'robberContainer' class='fl'></div>"+
+                    "<div id = 'robberContainer'></div>"+
                     "<div id = 'rollBox'></div>";
                 this.$el.append( template );
             },

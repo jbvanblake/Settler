@@ -71,13 +71,13 @@ define([
         },
         finishSetup:function(){
 
-            this.$el.find(".totalResourcesLabel").html("<label>Total Resources Collected</label>");
+            this.$el.find(".totalResourcesLabel").html("<label>Collected</label>");
             this.model.attributes.resources = new ResourceCollection();
             this.resourcesView = new ResourcesView({el:this.$el.find(".totalResourcesContainer"),collection:this.model.attributes.resources});
             this.resourcesView.render();
 
 
-            this.$el.find(".robbedLabel").html("<label>Total Resources Robbed</label>");
+            this.$el.find(".robbedLabel").html("<label>Robbed</label>");
             this.model.attributes.robbedResources = new ResourceCollection();
             this.robbedResourcesView = new ResourcesView({el:this.$el.find(".robbedResourceContainer"),collection:this.model.attributes.robbedResources});
             this.robbedResourcesView.render();

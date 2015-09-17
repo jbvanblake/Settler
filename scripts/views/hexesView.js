@@ -7,7 +7,7 @@ define(["../models/player",
 
         render: function(){
             var self = this;
-            var hexesHtml= $("<div><label>Current Player Hexes Points</label><div class = 'hexes'></div></div>");
+            var hexesHtml= $("<div><label>Hex Points</label><div class = 'hexes'></div></div>");
             var i=0;
             this.hexes.each(function(hex){
                 hex.attributes.index=i;
