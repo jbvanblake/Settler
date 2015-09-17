@@ -12,20 +12,20 @@ require.config({
         }
     },
     paths: {
-        jquery: 'scripts/lib/jquery.min',
-        underscore: 'scripts/lib/underscore.min',
-        backbone: 'scripts/lib/backbone.min',
-        text: 'scripts/lib/text',
-        QUnit: 'test/lib/qunit'
+        jquery: '../../scripts/lib/jquery.min',
+        underscore: '../../scripts/lib/underscore.min',
+        backbone: '../../scripts/lib/backbone.min',
+        text: '../../scripts/lib/text',
+        QUnit: '../lib/qunit'
     }
 });
 
 require(
     ['QUnit',
-        'test/catan/gameView.qunit'],
-    function(QUnit, gameViewTest) {
+        'playerView.qunit.js'],
+    function(QUnit, playerView) {
         // run the tests.
-        gameViewTest.run();
+        playerView.run();
         // start QUnit.
         QUnit.load();
         QUnit.start();

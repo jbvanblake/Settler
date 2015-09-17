@@ -13,7 +13,14 @@ define(["backbone"],function (Backbone) {
             this.$el.html($(rollTemplate));
         },
         events:{
-            "click #rollDice": "handleRollFromView"
+            "click #rollDice": "handleRollFromView",
+
+            "keyup #rollInput" : "keyPressEventHandler"
+        },
+        keyPressEventHandler : function(event){
+            if(event.keyCode == 13){
+                this.handleRollFromView(event);
+            }
         },
         handleShowGraph:function(){
             var dataPoints = _.pairs(_.countBy(this.rollHistory,function(roll){return roll;}));

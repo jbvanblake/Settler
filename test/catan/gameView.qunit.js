@@ -54,17 +54,7 @@ define(['jquery',
                 tearDown();
                 QUnit.start();
             });
-            QUnit.asyncTest("Game View Starting Resources Test", function() {
-                setup();
-                testContainer.find("#numPlayersOk").click();
-                QUnit.equal(testContainer.find(".nameSelectOk").length,3);
-                testContainer.find(".nameSelectOk").click();
-                testContainer.find(".resourceSetupOk").click();
 
-
-                tearDown();
-                QUnit.start();
-            });
         }
 
 

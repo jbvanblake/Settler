@@ -7,7 +7,7 @@ define(["backbone"
     var Hex = Backbone.Model.extend({
         number:0,
         resource:"LUMBER",
-        id:'A'
+        alphaId:'A'
     });
 
 

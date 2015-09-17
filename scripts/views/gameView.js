@@ -37,18 +37,18 @@
             },
             namePlayersStep: function(e){
                 e.stopPropagation();
-                this.model.numPlayers = parseInt($(this.el).find("#numPlayers option:selected").val());
-                this.model.players = new PlayerCollection();
-                for(var i = 0;i<this.model.numPlayers;i++){
+                this.model.attributes.numPlayers = parseInt($(this.el).find("#numPlayers option:selected").val());
+                this.model.attributes.players = new PlayerCollection();
+                for(var i = 0;i<this.model.attributes.numPlayers;i++){
                     var p = new Player(),
                         playerContainer = $("<div></div>");
 
-                    var pv = new PlayerView({el:playerContainer,model:p});
+                    var pv = new PlayerView({el:playerContainer, model:p});
                     this.playerViews.push(pv);
 
                     this.listenTo(pv,"playerReady",this.handlePlayerReady);
                     $("#playerSection").append(pv.el);
-                    this.model.players.add(p);
+                    this.model.attributes.players.add(p);
                     pv.render();
                 }
                 $(this.el).find("#numPlayers").hide();
@@ -58,7 +58,7 @@
                 if(this.playersReady.indexOf(player)<0){
                     this.playersReady.push(player);
                 }
-                if(this.playersReady.length==this.model.numPlayers){
+                if(this.playersReady.length==this.model.attributes.numPlayers){
                     this.rollView = new RollView({el:this.$el.find("#rollBox")});
                     this.rollView.render();
                     this.listenTo(this.rollView, "numberRolled", this.handleRoll);

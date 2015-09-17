@@ -14,8 +14,8 @@ define(["backbone",
 
         },
         initialize: function(){
-            this.name = "default";
-            this.hexes= new HexCollection();
+            this.set("name", "default");
+            this.set("hexes", new HexCollection());
         }
     });
 

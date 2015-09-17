@@ -10,7 +10,14 @@ define(["backbone"],function (Backbone) {
             this.$el.html($(template));
         },
         events:{
-            "click #robberSubmit": "handleRobberSubmit"
+            "click #robberSubmit": "handleRobberSubmit",
+            "keyup .robberInput": "keyPressEventHandler"
+        },
+
+        keyPressEventHandler : function(event){
+            if(event.keyCode == 13){
+                this.handleRobberSubmit(event);
+            }
         },
         handleRobberSubmit: function(){
             var hexId = this.$el.find(".robberInput").val().toUpperCase();

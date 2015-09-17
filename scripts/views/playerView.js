@@ -17,7 +17,7 @@ define([
     var PlayerView = Backbone.View.extend({
 
         initialize: function(){
-//            this.resources = new ResourceCollection();
+            this.resources = new ResourceCollection();
             this.unique=1;
             var template = _.template(playerTemplate)({resourceSelectTemplate:selectTemplate});
 
@@ -29,24 +29,24 @@ define([
 
         },
         setListeners:function(){
-//            this.hexInput = new HexInputView({el:this.$el.find(".hexInputSlot")});
-//            this.listenTo(this.hexInput,"playerGetsAnotherHex",this.handleAddHex);
+            this.hexInput = new HexInputView({el:this.$el.find(".hexInputSlot")});
+            this.listenTo(this.hexInput,"playerGetsAnotherHex",this.handleAddHex);
 
         },
         handleAddHex:function(data){
-            this.model.hexes.add(new Hex({number:data.num,resource:data.res,id:data.id}));
+            this.model.attributes.hexes.add(new Hex({number:data.num,resource:data.res,alphaId:data.id}));
             this.hexInput.render();
             this.hexCatalog.render();
         },
         handleRemoveHex:function(data){
-            this.model.hexes.remove(data.id);
+            this.model.attributes.hexes.remove(data.id);
             this.hexInput.render();
             this.hexCatalog.render();
         },
         events:{
-            "click .nameSelectOk": "saveName"//,
-//            "click .resourceSetupOk": "giveStartingResources",
-//            "keyup .nameSelect" : "keyPressEventHandler"
+            "click .nameSelectOk": "saveName",
+            "click .resourceSetupOk": "giveStartingResources",
+            "keyup .nameSelect" : "keyPressEventHandler"
         },
 
         keyPressEventHandler : function(event){
@@ -66,30 +66,30 @@ define([
                     self.resourcesView.collection.add(new Resource({type:type}));
                 }
             });
-            this.model.set('resources', resources);
+            this.model.attributes.resources = resources;
             this.$el.find(".startingResourcesContainer").hide();
         },
         finishSetup:function(){
 
-//            this.$el.find(".totalResourcesLabel").html("<label>Total Resources Collected</label>");
-//            this.model.set('resources', new ResourceCollection());
-//            this.resourcesView = new ResourcesView({el:this.$el.find(".totalResourcesContainer"),collection:this.model.get("resources")});
-//            this.resourcesView.render();
-//
-//
-//            this.$el.find(".robbedLabel").html("<label>Total Resources Robbed</label>");
-//            this.model.set('robbedResources', new ResourceCollection());
-//            this.robbedResourcesView = new ResourcesView({el:this.$el.find(".robbedResourceContainer"),collection:this.model.get("robbedResources")});
-//            this.robbedResourcesView.render();
-//
-//            this.renderHexInput();
+            this.$el.find(".totalResourcesLabel").html("<label>Total Resources Collected</label>");
+            this.model.attributes.resources = new ResourceCollection();
+            this.resourcesView = new ResourcesView({el:this.$el.find(".totalResourcesContainer"),collection:this.model.attributes.resources});
+            this.resourcesView.render();
+
+
+            this.$el.find(".robbedLabel").html("<label>Total Resources Robbed</label>");
+            this.model.attributes.robbedResources = new ResourceCollection();
+            this.robbedResourcesView = new ResourcesView({el:this.$el.find(".robbedResourceContainer"),collection:this.model.attributes.robbedResources});
+            this.robbedResourcesView.render();
+
+            this.renderHexInput();
 
             this.$el.find(".playerName").show();
 
             this.trigger("playerReady", this.model);
         },
         renderHexInput: function(){
-            this.hexCatalog = new HexesView(this.model.hexes,this.$el.find(".hexCatalog"));
+            this.hexCatalog = new HexesView(this.model.attributes.hexes,this.$el.find(".hexCatalog"));
             this.hexCatalog.render();
 
             this.listenTo(this.hexCatalog,"removeHex",this.handleRemoveHex);
@@ -100,7 +100,7 @@ define([
 
         },
         saveName:function(){
-            this.model.set("name", $(this.el).find(".nameSelect").val());
+            this.model.attributes.name = $(this.el).find(".nameSelect").val();
             this.$el.find(".nameSelectContainer").hide()
             this.setupResources();
             this.finishSetup();
@@ -108,19 +108,19 @@ define([
         },
         setupResources:function(){
 
-            var dashboardTemplate = _.template(playerDashboardTemplate)( {name:this.model.get("name")});
+            var dashboardTemplate = _.template(playerDashboardTemplate)( {name:this.model.attributes.name});
 
             $(this.el).find(".playerOutputs").prepend(dashboardTemplate);
         },
         roll:function(roll,robberHex){
             var self=this;
-            this.model.hexes.each(function(hex){
-                if(hex.get("number")==roll){
-                    if(hex.get("id")==robberHex){
-                        self.model.get("robbedResources").add(new Resource({type:hex.get("resource")}));
+            this.model.attributes.hexes.each(function(hex){
+                if(hex.attributes.number == roll){
+                    if(hex.get("alphaId")==robberHex){
+                        self.model.attributes.robbedResources.add(new Resource({type:hex.get("resource")}));
                     }
                     else{
-                        self.model.get("resources").add(new Resource({type:hex.get("resource")}));
+                        self.model.attributes.resources.add(new Resource({type:hex.get("resource")}));
                     }
                 }
             });
