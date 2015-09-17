@@ -17,5 +17,6 @@ define(["jquery",
         var initialize = function(){
             startView = new GameView({model:new Game(), el:$("#gameBox")});
         }
+        return {initialize:initialize};
 
 });

@@ -1,4 +1,4 @@
-define(["jquery",
+    define(["jquery",
     "../models/hex",
     "../models/player",
     "../collections/playerCollection",
@@ -35,7 +35,8 @@ define(["jquery",
             events: {
                 "click #numPlayersOk": "namePlayersStep"
             },
-            namePlayersStep: function(){
+            namePlayersStep: function(e){
+                e.stopPropagation();
                 this.model.numPlayers = parseInt($(this.el).find("#numPlayers option:selected").val());
                 this.model.players = new PlayerCollection();
                 for(var i = 0;i<this.model.numPlayers;i++){

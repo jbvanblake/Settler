@@ -20,6 +20,8 @@ define(['jquery',
 
             }
             function tearDown(){
+                gameView.remove();
+                gameView.undelegateEvents();
                 testContainer.html("");
             }
 
@@ -49,6 +51,17 @@ define(['jquery',
 
                 QUnit.equal(testContainer.find("#robberContainer").length,1);
                 QUnit.equal(testContainer.find("#rollBox").length,1);
+                tearDown();
+                QUnit.start();
+            });
+            QUnit.asyncTest("Game View Starting Resources Test", function() {
+                setup();
+                testContainer.find("#numPlayersOk").click();
+                QUnit.equal(testContainer.find(".nameSelectOk").length,3);
+                testContainer.find(".nameSelectOk").click();
+                testContainer.find(".resourceSetupOk").click();
+
+
                 tearDown();
                 QUnit.start();
             });
