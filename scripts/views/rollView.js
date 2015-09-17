@@ -7,7 +7,7 @@ define(["backbone"],function (Backbone) {
             var rollTemplate="<div id='rollInputs' >" +
                 "<input id='rollInput' type='text' alt='Enter Number Rolled'>" +
                 "<input id='rollDice' type=button value='Roll!'>" +
-                "<div style='height:300px;width:400px;'><div id ='rollGraphContainer'></div></div>" +
+                "<div style='height:300px;padding: 1em;width:400px;'><div id ='rollGraphContainer'></div></div>" +
                 "</div>";
 
             this.$el.html($(rollTemplate));
