@@ -15,10 +15,13 @@ Pretty self explanitory.Player collections is a collection of player models. Hex
 Game is a model that represents some information that exists outside the scope of anyother model. Information about the game itself that doesn't pertain to any individual Player or hex.
 Hex is a model that represents a resource generating hex on the gameboard of Settlers that has a dice roll number, a unique identifier, and a resource type. An Important distinction is that this represents the generation object(i.e. a city or settlement.)
 
-\  Wood /
- \____A/  Wheat
- /     \
-/ Brick \
+```
+\  Wood  /
+ \_____A/  Wheat
+ /      \
+/  Brick \
+
+```
 
 If A is an intersection of three hexes, than a player must create three "Hex"s in order to produce from all three. On hex for the wood hex, one for the wheat hex, one for the brick hex.
 
