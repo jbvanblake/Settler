@@ -3,6 +3,10 @@ require.config({
         jquery: {
             exports: "$"
         },
+        "jquery-ui": {
+            exports: "$",
+            deps: ['jquery']
+        },
         underscore: {
             exports: '_'
         },
@@ -15,6 +19,7 @@ require.config({
     },
     paths: {
         jquery: 'scripts/lib/jquery.min',
+        "jquery-ui": "scripts/lib/jquery-ui-1.11.4/jquery-ui.min",
         "jqplot.core": "scripts/lib/jquery.jqplot.min",
         "jqplot": "scripts/lib/jqplotWithPlugins",
         underscore: 'scripts/lib/underscore.min',

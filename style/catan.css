@@ -25,7 +25,17 @@ body::after{
     text-decoration:underline;
 }
 .allHexContainer{
-    width: 10em;
+    width: 13em;
+}
+.info-tooltip{
+    color:red; !important
+}
+.resource-tooltip:hover{
+    opacity: 0.7;
+
+}
+.resource-multi-input-container {
+    height:1em;
 }
 .gameBox{
     width: 36em;

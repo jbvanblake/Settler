@@ -1,4 +1,7 @@
-define(["backbone","../models/resource"], function(Backbone, Resource){
+define(["backbone",
+    "../models/resource"
+],
+    function(Backbone, Resource){
 
 
     var ResourceCollection = Backbone.Collection.extend({

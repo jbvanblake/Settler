@@ -1,6 +1,7 @@
 define(["../models/resource",
     "text!../templates/resourcePointInputTemplate.html",
-    "text!../templates/hexInputError.html"
+    "text!../templates/hexInputError.html",
+    'jquery-ui'
 ], function(Resource, resourcePointInputTemplate, errorHtmlTemplate){
 
     var RESOURCE_TYPES = ['LUMBER','ORE','WHEAT','WOOL','BRICK','COIN','CLOTH','PAPER'];
@@ -10,6 +11,11 @@ define(["../models/resource",
     var HexInputView = Backbone.View.extend({
         render:function(){
             var inputTemplate = _.template(resourcePointInputTemplate)({"resourceTypes":RESOURCE_TYPES, "hexNumbers":POSSIBLE_HEX_NUMBERS, "hexIds":POSSIBLE_HEX_IDS});
+
+
+            this.$el.find(".resource-tooltip").tooltip({
+                tooltipClass: "info-tooltip"
+            });
 
             this.$el.empty();
             this.$el.append(inputTemplate);
