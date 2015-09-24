@@ -1,0 +1,12 @@
+body::after{
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background :url(http://hd.wallpaperswide.com/thumbs/street_fighter_characters-t2.jpg);
+    opacity: 0.2;
+
+}

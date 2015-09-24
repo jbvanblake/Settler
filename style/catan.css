@@ -1,0 +1,84 @@
+.playerView{
+    border: 5px ridge #666F0D;
+    border-radius: 1em;
+    padding: .7em;
+    background-color: rgba(255,255,255,0.58);
+    width: 40em;
+}
+
+body::after{
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background :url(catanBackground.jpg);
+    opacity: 0.2;
+
+}
+.playerName{
+    color: #666F0D;
+    font-size: 2em;
+    font-weight:900;
+    text-decoration:underline;
+}
+.allHexContainer{
+    width: 10em;
+}
+.gameBox{
+    width: 36em;
+    height: 25em;
+}
+.rollHistory input{
+    height: 5em;
+}
+
+label {
+    font-weight:900;
+    color: #666F0D;
+    text-decoration:underline;
+}
+.setupContainer{
+    width:70%;
+}
+.hexInputSlot{
+    margin-left:1em;
+    margin-right:1em;
+}
+.playerOutputs{
+    width:50%;
+}
+.resourceInsertionContainer{
+    margin: 1em;
+}
+.robberInput{
+    text-align: center;
+}
+
+
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.ORE, .COIN {
+    color: #041552;
+}
+.WHEAT {
+    color: gold;
+}
+.BRICK {
+    color: firebrick;
+}
+.LUMBER, .PAPER {
+    color: #1a5d1a;
+}
+.WOOL, .CLOTH {
+    color: #69ca00;
+}
+#robberContainer {
+    margin: 5px 0;
+}
