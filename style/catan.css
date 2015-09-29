@@ -29,6 +29,9 @@ body::after{
 }
 .info-tooltip{
     color:red; !important
+
+    width:10em; !important
+    height:10em; !important
 }
 .resource-tooltip:hover{
     opacity: 0.7;

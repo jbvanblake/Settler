@@ -172,19 +172,19 @@ define(["../models/resource",
                     this.$el.find(".errorContainer").hide();
                 }
             }
-            else{
-                var res1 = this.$el.find(".hexInputResource1").val();
-                var res2 = this.$el.find(".hexInputResource2").val();
-                var num = this.$el.find(".hexInputRoll").val();
-                var id = this.$el.find(".hexInputId").val();
-
-                if(res1 !="NONE"){
-                    this.trigger("playerGetsAnotherHex",{res:res1,num:num,id:id});
-                }
-                if(res2 !="NONE"){
-                    this.trigger("playerGetsAnotherHex",{res:res2,num:num,id:id});
-                }
-            }
+//            else{
+//                var res1 = this.$el.find(".hexInputResource1").val();
+//                var res2 = this.$el.find(".hexInputResource2").val();
+//                var num = this.$el.find(".hexInputRoll").val();
+//                var id = this.$el.find(".hexInputId").val();
+//
+//                if(res1 !="NONE"){
+//                    this.trigger("playerGetsAnotherHex",{res:res1,num:num,id:id});
+//                }
+//                if(res2 !="NONE"){
+//                    this.trigger("playerGetsAnotherHex",{res:res2,num:num,id:id});
+//                }
+//            }
         }
 
     });
