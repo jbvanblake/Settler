@@ -69,10 +69,22 @@ label {
 .resourceInsertionContainer{
     margin: 1em;
 }
-.robberInput{
+.robberInput,  #rollInput{
     text-align: center;
+    Height: 2em;
+    width: 20em;
 }
 
+#robberSubmit, #rollDice {
+    text-align: center;
+    Height: 2em;
+    width: 5em;
+    margin: 1em;
+}
+.robber-label {
+    color: #666F0D;
+    font: bold 2em arial sans-serif;
+}
 
 .fl {
     float:left;
