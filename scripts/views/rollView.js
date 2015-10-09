@@ -55,7 +55,7 @@ define(["backbone"],function (Backbone) {
             this.$el.find("#rollInput").val("")
             if(rollNum > 1 && rollNum < 13){
                 this.rollHistory.push(rollNum);
-                this.$el.find("#rollInput").attr("placeholder",this.rollHistory.reverse().toString())
+                this.$el.find("#rollInput").attr("placeholder",this.rollHistory.slice().reverse().toString())
                 this.trigger("numberRolled", rollNum);
             }
             this.handleShowGraph()
