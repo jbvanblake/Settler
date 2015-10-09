@@ -57,16 +57,14 @@ define([
 
         giveStartingResources: function(){
             var selects = this.$el.find(".startingResourcesContainer select");
-            var resources=new ResourceCollection();
+            var resources=this.model.attributes.resources;
             var self = this;
             _.each(selects, function(select){
                 var type = $(select).val();
                 if(type != 'NONE'){
                     resources.add(new Resource({type:type}));
-                    self.resourcesView.collection.add(new Resource({type:type}));
                 }
             });
-            this.model.attributes.resources = resources;
             this.$el.find(".startingResourcesContainer").hide();
         },
         finishSetup:function(){
@@ -75,6 +73,7 @@ define([
             this.model.attributes.resources = new ResourceCollection();
             this.resourcesView = new ResourcesView({el:this.$el.find(".totalResourcesContainer"),collection:this.model.attributes.resources});
             this.resourcesView.render();
+
 
 
             this.$el.find(".robbedLabel").html("<label>Robbed</label>");
