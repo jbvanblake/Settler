@@ -47,6 +47,9 @@ body::after{
 .rollHistory input{
     height: 5em;
 }
+#rollBox, #robberContainer {
+    margin: 1em;
+}
 
 label {
     font-weight:900;
@@ -91,7 +94,4 @@ label {
 }
 .WOOL, .CLOTH {
     color: #69ca00;
-}
-#robberContainer {
-    margin: 5px 0;
 }

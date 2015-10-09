@@ -4,7 +4,7 @@ define(["backbone"],function (Backbone) {
             this.hexId = "DESERT";
         },
         render:function(){
-            var template = "<div id='robberContainer'>" +
+            var template = "<div>" +
                 "<input class='robberInput' type='text' placeholder='Current: "+this.hexId+"'><input type='button' id='robberSubmit' value='Move'></button>";
 
             this.$el.html($(template));
