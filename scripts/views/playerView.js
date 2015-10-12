@@ -22,15 +22,9 @@ define([
             var template = _.template(playerTemplate)({resourceSelectTemplate:selectTemplate});
 
             this.$el.html( template );
-            this.setListeners();
 
             this.$el.find(".startingResourcesContainer").hide()
             return this;
-
-        },
-        setListeners:function(){
-            this.hexInput = new HexInputView({el:this.$el.find(".hexInputSlot")});
-            this.listenTo(this.hexInput,"playerGetsAnotherHex",this.handleAddHex);
 
         },
         handleAddHex:function(data){
@@ -95,6 +89,7 @@ define([
 
             this.hexInput = new HexInputView({el:this.$el.find(".hexInputSlot")});
             this.listenTo(this.hexInput,"addHex",this.handleAddHex);
+            this.listenTo(this.hexInput,"playerGetsAnotherHex",this.handleAddHex);
             this.hexInput.render();
 
         },

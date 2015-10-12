@@ -22,6 +22,7 @@ define(["../models/resource",
         },
         events:{
             "click .hexInputSubmit": "addHex",
+            "click .add-hex-toggle img": "toggleView",
             "keyup .allHexInput" : "keyPressEventHandler"
         },
 
@@ -29,6 +30,17 @@ define(["../models/resource",
             if(event.keyCode == 13){
                 this.addHex();
             }
+        },
+        toggleView : function(event){
+            var visible = this.$el.find(".resourceInsertionContainer:visible").length ==0;
+
+            if(visible){
+                this.$el.find(".add-hex-toggle img").attr("src","style/left.png");
+            }
+            else{
+                this.$el.find(".add-hex-toggle img").attr("src","style/right.png");
+            }
+            this.$el.find(".resourceInsertionContainer").toggle( "slide" );
         },
 
 
@@ -172,19 +184,6 @@ define(["../models/resource",
                     this.$el.find(".errorContainer").hide();
                 }
             }
-//            else{
-//                var res1 = this.$el.find(".hexInputResource1").val();
-//                var res2 = this.$el.find(".hexInputResource2").val();
-//                var num = this.$el.find(".hexInputRoll").val();
-//                var id = this.$el.find(".hexInputId").val();
-//
-//                if(res1 !="NONE"){
-//                    this.trigger("playerGetsAnotherHex",{res:res1,num:num,id:id});
-//                }
-//                if(res2 !="NONE"){
-//                    this.trigger("playerGetsAnotherHex",{res:res2,num:num,id:id});
-//                }
-//            }
         }
 
     });

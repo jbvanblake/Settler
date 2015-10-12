@@ -3,7 +3,7 @@
     border-radius: 1em;
     padding: .7em;
     background-color: rgba(255,255,255,0.58);
-    width: 40em;
+    width: auto;
 }
 
 body::after{
@@ -55,6 +55,7 @@ label {
     font-weight:900;
     color: #666F0D;
     text-decoration:underline;
+    display: block;
 }
 .setupContainer{
     width:70%;
@@ -64,10 +65,11 @@ label {
     margin-right:1em;
 }
 .playerOutputs{
-    width:50%;
+    width:20em;
 }
 .resourceInsertionContainer{
     margin: 1em;
+    float: right;
 }
 .robberInput,  #rollInput{
     text-align: center;
@@ -106,4 +108,12 @@ label {
 }
 .WOOL, .CLOTH {
     color: #69ca00;
+}
+.add-hex-toggle img {
+    opacity: .2;
+    width: 2em;
+    float: right;
+}
+.add-hex-toggle img:hover {
+    opacity: .5;
 }
