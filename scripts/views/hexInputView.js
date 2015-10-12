@@ -35,10 +35,10 @@ define(["../models/resource",
             var visible = this.$el.find(".resourceInsertionContainer:visible").length ==0;
 
             if(visible){
-                this.$el.find(".add-hex-toggle img").attr("src","style/left.png");
+                this.$el.find(".add-hex-toggle img").attr("src","resources/left.png");
             }
             else{
-                this.$el.find(".add-hex-toggle img").attr("src","style/right.png");
+                this.$el.find(".add-hex-toggle img").attr("src","resources/right.png");
             }
             this.$el.find(".resourceInsertionContainer").toggle( "slide" );
         },
